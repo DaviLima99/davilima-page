@@ -6,6 +6,15 @@
 @keyframes spinAround { from { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
   to { -webkit-transform: rotate(359deg); transform: rotate(359deg); } }
 
+.image-avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%; /*don't forget prefixes*/
+  background-image: url("../img/avatar.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+
 .delete, .modal-close, .is-unselectable, .button, .file, .breadcrumb, .pagination-previous, .pagination-next, .pagination-link, .pagination-ellipsis, .tabs { -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
 
 .select:not(.is-multiple):not(.is-loading)::after, .navbar-link:not(.is-arrowless)::after { border: 3px solid transparent; border-radius: 2px; border-right: 0; border-top: 0; content: " "; display: block; height: 0.625em; margin-top: -0.4375em; pointer-events: none; position: absolute; top: 50%; -webkit-transform: rotate(-45deg); transform: rotate(-45deg); -webkit-transform-origin: center; transform-origin: center; width: 0.625em; }
