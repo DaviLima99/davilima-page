@@ -4,6 +4,14 @@
   box-sizing: border-box;
   font-family: "PT Sans", sans-serif;
 }
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+#particles-js {
+  height: 100vh;
+}
 
 html {
   scroll-behavior: smooth;
@@ -11,6 +19,11 @@ html {
 
 .container {
   padding: 0 100px 0 100px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
 }
 
 nav ul,
@@ -22,15 +35,15 @@ nav ul,
 }
 
 body {
-  background-color: #252627;
+  background-color: #131414;
 }
 
-header {
+/* header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 20px;
-}
+} */
 
 .navbar {
   background-color: #181818;
@@ -44,7 +57,7 @@ header a,
 .projects h1,
 .container h1{
   color: #707070;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 li {
@@ -134,34 +147,31 @@ span.m-left {
 }
 
 .about {
-  height: 100vh;
-  margin-top: 100px;
+  /* height: 0%; */
 }
 
 .about h1,
 .projects h1 {
-  font-size: 10rem;
-  z-index: 0;
+  font-size: 8rem;
   opacity: .1;
 }
 
 .about-me-info {
   max-width: 900px;
-  background-color: #252627;
+  background-color: #121415;
   color: #707070;
   box-shadow: 0 0 1.2rem rgba(0, 0, 0, .25);
   padding: 50px;
   position: relative;
-  top: -70px;
   left: 50%;
   right: 50%;
   transform: translateX(-50%);
-  z-index: 1;
 }
 
 .about-me-info p {
   font-size: 1.3rem;
   color: #BEBEBE;
+  margin-bottom: 15px;
 }
 
 .about-me-info p:nth-child(2),
@@ -179,12 +189,15 @@ span.m-left {
 }
 
 .skills {
-  height: 100vh;
+  width: 100%;
+  max-width: 1188px;
+  padding: 0 30px;
+  margin: 32px auto;
 }
 
 .skills h1,
 .contact h1 {
-  text-align: right;
+  text-align: left;
   font-size: 10rem;
   opacity: .1;
 }
@@ -201,33 +214,47 @@ span.m-left {
   margin-bottom: 50px;
 }
 
+.skills ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* grid-gap: 24px; */
+  list-style: none;
+}
+
+.skills ul li {
+  position: relative;
+}
+
 .skill {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 40px;
+  margin-bottom: 15px;
+
 }
 
 div[class^='tag-'] {
-  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0% 50%, 0% 0%);
-  width: 120px;
+  display: table;
+  border-radius: 20px;
+  width: 100px;
   height: 30px;
   margin-right: 5px;
-  background-color: #ED5565;
+  background-color: rgb(39, 38, 38);
   margin-left: 30px;
 }
 
 div[class^='tag-'] p {
+  display: table-cell;
+  vertical-align: middle;
   color: #FFF;
-  text-align: left;
-  padding-left: 10px;
-  font-size: 1.1rem;
-  padding-top: 3px;
+  text-align: center;
+  font-size: 1rem;
 }
+
 
 .progressbar {
   position: relative;
-  width: 600px;
+  width: 380px;
   height: 30px;
   border: 2px solid #d43646;
   border-radius: 20px;
@@ -257,7 +284,7 @@ div[class^='bar-'] {
   color: #ED5565;
   font-size: 1.1rem;
   letter-spacing: 1px;
-  background-color: #252627;
+  background-color: #131414;
   outline: none;
   cursor: pointer;
   margin-right: 15px;
@@ -269,12 +296,6 @@ div[class^='category-']{
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   grid-gap: 20px;
 }
-/* 
-.projects a {
-  justify-self: center;
-  position: relative;
-  display: inline-block;
-} */
 
 .project-category .active {
   background-color: #ED5565;
@@ -287,6 +308,8 @@ button.active {
 .projects a img {
   width: 350px;
   justify-self: center;
+  box-shadow: 0 4px 8px 0 rgba(236, 15, 15, 0.2), 0 6px 20px 0 rgba(255, 135, 135, 0.19);
+  
 }
 
 div.hideCategory{
@@ -314,11 +337,98 @@ footer p {
   padding: 30px 0;
 }
 
+ul.social-network {
+	list-style: none;
+	display: inline;
+	margin-left:0 !important;
+	padding: 0;
+}
+ul.social-network li {
+	display: inline;
+	margin: 0 5px;
+}
 
 
+/* footer social icons */
+.social-network a.icoGithub:hover {
+  background-color:rgb(0, 0, 0);
+  box-shadow: 0 1px 200px 0 rgba(236, 15, 15, 0.2), 0 1px 15px 0 rgba(240, 135, 135, 0.19);
+}
+.social-network a.icoTwitter:hover {
+  background-color:#33ccff;
+  box-shadow: 0 1px 200px 0 rgba(236, 15, 15, 0.2), 0 1px 15px 0 rgba(240, 135, 135, 0.19);
+}
+.social-network a.icoLinkedin:hover {
+  background-color:#007bb7;
+  box-shadow: 0 1px 200px 0 rgba(236, 15, 15, 0.2), 0 1px 15px 0 rgba(240, 135, 135, 0.19);
+}
+.social-network a.icoRss:hover i, .social-network a.icoGithub:hover i, .social-network a.icoTwitter:hover i,
+.social-network a.icoGoogle:hover i, .social-network a.icoVimeo:hover i, .social-network a.icoLinkedin:hover i {
+	color:#fff;
+}
+a.socialIcon:hover, .socialHoverClass {
+  color:#44BCDD;
+  
+}
 
+.social-circle li a {
+	display:inline-block;
+	position:relative;
+	margin:0 auto 0 auto;
+	-moz-border-radius:50%;
+	-webkit-border-radius:50%;
+	border-radius:50%;
+	text-align:center;
+	width: 50px;
+	height: 50px;
+  font-size:20px;
+}
+.social-circle li i {
+	margin:0;
+	line-height:50px;
+	text-align: center;
+}
 
+.social-circle li a:hover i, .triggeredHover {
+	-moz-transform: rotate(360deg);
+	-webkit-transform: rotate(360deg);
+	-ms--transform: rotate(360deg);
+	transform: rotate(360deg);
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+  transition: all 0.2s;
+  
+}
+.social-circle i {
+	color: #fff;
+	-webkit-transition: all 0.8s;
+	-moz-transition: all 0.8s;
+	-o-transition: all 0.8s;
+	-ms-transition: all 0.8s;
+	transition: all 0.8s;
+}
 
+.social {
+  width: 100%;
+  text-align: center;
+}
+
+header{
+  padding-right: 20px;
+  padding-top: 20px;
+}
+
+header a{
+  float: right;
+  color: rgb(221, 221, 221);
+  text-align: center;
+  text-decoration: none;
+  font-size: 25px;
+  line-height: 25px;
+  border-radius: 4px;
+}
 
 
 
